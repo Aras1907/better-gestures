@@ -10,7 +10,19 @@ GNOME's own three-finger gestures (workspace switching, overview) move to **four
 - **Four-finger swipes** switch workspaces and open the overview.
 - **Drop delay:** after you lift your fingers, the drag stays held for a short time (5 seconds by default). You can reposition your fingers and keep dragging, like on macOS. Any other input drops it immediately.
 - **Drag speed:** a multiplier on pointer speed while dragging.
-- **Swipe back in Files (Nautilus):** swipe two fingers right to go back and left to go forward, with the folder sliding like a page.
+- **Swipe back and forward in Files (Nautilus):** swipe two fingers right to go back and left to go forward, with the folder sliding like a page in Safari.
+
+## Gestures
+
+| Gesture | Action |
+|---|---|
+| Three fingers, slide | Drag (move windows, select text, drag and drop) |
+| Four fingers, swipe left/right | Switch workspace |
+| Four fingers, swipe up | Open the overview |
+| Two fingers, swipe right in Files | Go back to the previous folder |
+| Two fingers, swipe left in Files | Go forward to the next folder |
+
+In Files, the page follows your fingers. Lift past about 40% of the window, or flick, to turn the page. Lift earlier and it slides back. If there is no folder to go back or forward to, the page only moves a little.
 
 ## Settings
 
@@ -20,7 +32,7 @@ Open the extension's preferences (Extension Manager or the Extensions app):
 |---|---|---|---|
 | Drag Speed | 0.25 – 4.0 | 1.0 | Pointer speed multiplier while dragging |
 | Drop Delay (ms) | 0 – 10000 | 5000 | How long to keep holding after fingers lift (0 drops at once) |
-| Swipe Back in Files | on/off | on | Two-finger back/forward in Nautilus |
+| Swipe Back in Files | on/off | on | Two-finger back and forward swipes in Nautilus |
 
 ## Requirements
 
