@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.3-finger-drag"
+          path="/org/gnome/shell/extensions/3-finger-drag/">
+    <key name="drag-speed" type="d">
+      <range min="0.25" max="4.0"/>
+      <default>1.0</default>
+      <summary>Drag speed</summary>
+      <description>Multiplier applied to the normal pointer speed while dragging with three fingers (1.0 = same as one-finger pointer movement)</description>
+    </key>
+    <key name="drop-delay" type="i">
+      <range min="0" max="10000"/>
+      <default>5000</default>
+      <summary>Drop delay</summary>
+      <description>Milliseconds to keep holding after the fingers lift, so they can be repositioned to continue the drag with three fingers. Any other input (pointer motion, scrolling, clicks, other finger counts, key presses) drops immediately (0 = drop the moment the fingers lift)</description>
+    </key>
+    <key name="nautilus-swipe-back" type="b">
+      <default>true</default>
+      <summary>Swipe back in Files</summary>
+      <description>Swipe two fingers to the right in Files (Nautilus) to go back, or to the left to go forward, with the folder sliding like a page</description>
+    </key>
+  </schema>
+</schemalist>
