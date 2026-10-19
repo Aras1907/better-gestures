@@ -1,5 +1,5 @@
 project('gnome-3-finger-drag',
-  version: '1.0',
+  version: '1.1.0',
   license: 'MIT',
   meson_version: '>= 0.57.0',
   default_options: ['prefix=/usr'])
