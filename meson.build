@@ -1,28 +1,22 @@
-project('gnome-3-finger-drag', 'gnome-shell-extension',
+project('gnome-3-finger-drag',
   version: '1.0',
   license: 'MIT',
-  meson_version: '>= 0.50.0',
+  meson_version: '>= 0.57.0',
   default_options: ['prefix=/usr'])
+
+# A system-wide install, for distribution packages. The extension is plain
+# JavaScript, so nothing here depends on the CPU architecture.
 
 uuid = 'gnome-3-finger-drag@extension.org'
 schema = 'org.gnome.shell.extensions.3-finger-drag'
+extension_dir = get_option('datadir') / 'gnome-shell' / 'extensions' / uuid
 
-# Install extension files
-install_data(
-  ['extension.js', 'prefs.js', 'metadata.json'],
-  install_dir: join_paths(get_option('datadir'), 'gnome-shell', 'extensions', uuid)
-)
+install_data(['extension.js', 'prefs.js', 'metadata.json'],
+  install_dir: extension_dir)
 
-# Install library files
-install_subdir('lib', 
-  install_dir: join_paths(get_option('datadir'), 'gnome-shell', 'extensions', uuid))
+install_subdir('lib', install_dir: extension_dir)
 
-# Install schemas
-install_data(
-  ['schemas/' + schema + '.gschema.xml'],
-  install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
-)
+install_data('schemas' / schema + '.gschema.xml',
+  install_dir: get_option('datadir') / 'glib-2.0' / 'schemas')
 
-# Compile schemas after installation
-meson.add_install_script('glib-compile-schemas', 
-  join_paths(get_option('datadir'), 'glib-2.0', 'schemas'))
+import('gnome').post_install(glib_compile_schemas: true)

@@ -10,7 +10,8 @@ GNOME's own three-finger gestures (workspace switching, overview) move to **four
 - **Four-finger swipes** switch workspaces and open the overview.
 - **Drop delay:** after you lift your fingers, the drag stays held for a short time (5 seconds by default). You can reposition your fingers and keep dragging, like on macOS. Any other input drops it immediately.
 - **Drag speed:** a multiplier on pointer speed while dragging.
-- **Swipe back and forward in Files (Nautilus):** swipe two fingers right to go back and left to go forward, with the folder sliding like a page in Safari.
+- **Swipe back and forward in Files (Nautilus):** swipe two fingers right to go back and left to go forward, with the folder view sliding like a page in Safari. The sidebar and header bar stay put. The folder you are going to shows as soon as the swipe starts, if you have already visited it in that window.
+- **Touchscreen swipes in Files:** swipe one finger in from the left edge of the folder view to go back, or from the right edge to go forward. Touches elsewhere scroll, select and drag files as usual. Needs GNOME 49 or later.
 
 ## Gestures
 
@@ -21,8 +22,9 @@ GNOME's own three-finger gestures (workspace switching, overview) move to **four
 | Four fingers, swipe up | Open the overview |
 | Two fingers, swipe right in Files | Go back to the previous folder |
 | Two fingers, swipe left in Files | Go forward to the next folder |
+| One finger on a touchscreen, swipe in from the left/right edge of the folder view in Files | Go back/forward |
 
-In Files, the page follows your fingers. Lift past about 40% of the window, or flick, to turn the page. Lift earlier and it slides back. If there is no folder to go back or forward to, the page only moves a little.
+In Files, the page follows your fingers. Lift past about 40% of the window, or flick, to turn the page. Lift earlier and it slides back. If there is no folder to go back or forward to, the page stretches a little over a blank page and springs back, like in Safari.
 
 ## Settings
 
@@ -33,11 +35,14 @@ Open the extension's preferences (Extension Manager or the Extensions app):
 | Drag Speed | 0.25 – 4.0 | 1.0 | Pointer speed multiplier while dragging |
 | Drop Delay (ms) | 0 – 10000 | 5000 | How long to keep holding after fingers lift (0 drops at once) |
 | Swipe Back in Files | on/off | on | Two-finger back and forward swipes in Nautilus |
+| Touchscreen Swipe in Files | on/off | on | One-finger touchscreen back and forward swipes in Nautilus (GNOME 49+) |
 
 ## Requirements
 
-- GNOME Shell 46, 47, 48, 49 or 50
+- GNOME Shell 46, 47, 48, 49 or 50, on any Linux distribution (Fedora, Ubuntu, Debian, Arch, openSUSE and others)
+- Any CPU architecture (x86_64, ARM64 and others): the extension is plain JavaScript run by GNOME Shell, with nothing to compile
 - A touchpad with multi-touch support
+- For the swipes in Files: a Wayland session (the default on GNOME; GNOME 49 and later have no X11 session at all). Touchscreen swipes need GNOME 49 or later
 
 ## Installation
 
@@ -60,7 +65,14 @@ cd gnome-3-finger-drag
 ./build.sh
 ```
 
-`build.sh` packs the extension, installs it for the current user, compiles the schemas and enables it.
+`build.sh` packs the extension, installs it for the current user and enables it. It only needs `gnome-extensions` and `gsettings`, which every GNOME desktop has.
+
+To install for all users instead (for distribution packages), use Meson:
+
+```sh
+meson setup build
+sudo meson install -C build
+```
 
 ## Uninstall
 
