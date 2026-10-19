@@ -51,5 +51,12 @@ export default class ThreeFingerDragPrefs extends ExtensionPreferences {
         });
         settings.bind('nautilus-swipe-back', swipeBackRow, 'active', Gio.SettingsBindFlags.DEFAULT);
         extrasGroup.add(swipeBackRow);
+
+        const touchSwipeRow = new Adw.SwitchRow({
+            title: 'Touchscreen Swipe in Files',
+            subtitle: 'On a touchscreen in Files, swipe one finger in from the left edge of the folder view to go back, or from the right edge to go forward. Needs GNOME 49 or later'
+        });
+        settings.bind('nautilus-touch-swipe', touchSwipeRow, 'active', Gio.SettingsBindFlags.DEFAULT);
+        extrasGroup.add(touchSwipeRow);
     }
 }
