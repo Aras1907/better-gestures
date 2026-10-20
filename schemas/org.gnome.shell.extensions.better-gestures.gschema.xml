@@ -21,13 +21,18 @@
     </key>
     <key name="nautilus-swipe-back" type="b">
       <default>true</default>
-      <summary>Swipe back in Files</summary>
+      <summary>Swipe back and forward in Files</summary>
       <description>Swipe two fingers to the right in Files (Nautilus) to go back, or to the left to go forward, with the folder sliding like a page</description>
     </key>
     <key name="nautilus-touch-swipe" type="b">
       <default>true</default>
       <summary>Touchscreen swipe in Files</summary>
       <description>Swipe one finger in from the left edge of the folder view on a touchscreen in Files (Nautilus) to go back, or from the right edge to go forward, with the folder sliding like a page. Needs GNOME 49 or later</description>
+    </key>
+    <key name="nautilus-navigation-animation" type="b">
+      <default>true</default>
+      <summary>Animate back and forward in Files</summary>
+      <description>Slide the folder like a page when going back or forward in Files (Nautilus) with its back and forward buttons, Alt+Left and Alt+Right, or a mouse's side buttons</description>
     </key>
   </schema>
 </schemalist>

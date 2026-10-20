@@ -55,7 +55,7 @@ export default class BetterGesturesPrefs extends ExtensionPreferences {
         page.add(extrasGroup);
 
         const swipeBackRow = new Adw.SwitchRow({
-            title: 'Swipe Back in Files',
+            title: 'Swipe Back and Forward in Files',
             subtitle: 'Swipe two fingers right or left in Files (Nautilus) to go back or forward, with the folder sliding like a page'
         });
         settings.bind('nautilus-swipe-back', swipeBackRow, 'active', Gio.SettingsBindFlags.DEFAULT);
@@ -67,5 +67,12 @@ export default class BetterGesturesPrefs extends ExtensionPreferences {
         });
         settings.bind('nautilus-touch-swipe', touchSwipeRow, 'active', Gio.SettingsBindFlags.DEFAULT);
         extrasGroup.add(touchSwipeRow);
+
+        const animationRow = new Adw.SwitchRow({
+            title: 'Animate Back and Forward in Files',
+            subtitle: 'Slide the folder like a page when going back or forward with the buttons in Files, Alt+← and Alt+→, or the side buttons of a mouse'
+        });
+        settings.bind('nautilus-navigation-animation', animationRow, 'active', Gio.SettingsBindFlags.DEFAULT);
+        extrasGroup.add(animationRow);
     }
 }

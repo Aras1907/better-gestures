@@ -13,6 +13,7 @@ GNOME's own three-finger gestures (workspace switching, overview) move to **four
 - **On/off switch:** turn the three-finger drag off in the settings to leave three-finger swipes to GNOME.
 - **Swipe back and forward in Files (Nautilus):** swipe two fingers right to go back and left to go forward, with the folder view sliding like a page in Safari. The sidebar and header bar stay put. The folder you are going to shows as soon as the swipe starts, if you have already visited it in that window.
 - **Touchscreen swipes in Files:** swipe one finger in from the left edge of the folder view to go back, or from the right edge to go forward. Touches elsewhere scroll, select and drag files as usual. Needs GNOME 49 or later.
+- **Page turns for the buttons in Files:** going back or forward with the back and forward buttons, `Alt+←` and `Alt+→`, or a mouse's side buttons slides the folder the same way.
 
 ## Gestures
 
@@ -25,7 +26,7 @@ GNOME's own three-finger gestures (workspace switching, overview) move to **four
 | Two fingers, swipe left in Files | Go forward to the next folder |
 | One finger on a touchscreen, swipe in from the left/right edge of the folder view in Files | Go back/forward |
 
-In Files, the page follows your fingers. Lift past about 40% of the window, or flick, to turn the page. Lift earlier and it slides back. If there is no folder to go back or forward to, nothing happens: the page does not move.
+In Files, the page follows your fingers. Lift past about 40% of the window, or flick, to turn the page. Lift earlier and it slides back. If there is no folder to go back or forward to (for example in a window you just opened), nothing happens: the page does not move, and the swipe scrolls Files as usual.
 
 ## Settings
 
@@ -36,8 +37,9 @@ Open the extension's preferences (Extension Manager or the Extensions app):
 | Three-Finger Drag | on/off | on | Drag with three fingers (when off, GNOME gets three-finger swipes) |
 | Drag Speed | 0.25 – 4.0 | 1.0 | Pointer speed multiplier while dragging |
 | Drop Delay (ms) | 0 – 10000 | 5000 | How long to keep holding after fingers lift (0 drops at once) |
-| Swipe Back in Files | on/off | on | Two-finger back and forward swipes in Nautilus |
+| Swipe Back and Forward in Files | on/off | on | Two-finger back and forward swipes in Nautilus |
 | Touchscreen Swipe in Files | on/off | on | One-finger touchscreen back and forward swipes in Nautilus (GNOME 49+) |
+| Animate Back and Forward in Files | on/off | on | Slide the folder when going back or forward with the buttons, the keyboard or a mouse's side buttons |
 
 ## Requirements
 
