@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-GNOME Shell extension (GJS, ES modules) for GNOME Shell 46–50: macOS-style
+Better Gestures, a GNOME Shell extension (GJS, ES modules) for GNOME Shell 46–50: macOS-style
 three-finger drag, GNOME's own gestures moved to four fingers, and
 Safari-style two-finger back/forward swipes in Files (Nautilus).
 
@@ -8,7 +8,7 @@ Safari-style two-finger back/forward swipes in Files (Nautilus).
 
 - `extension.js`: entry point; creates the managers in `enable()` and destroys them in `disable()`.
 - `prefs.js`: preferences window.
-- `schemas/`: GSettings schema `org.gnome.shell.extensions.3-finger-drag`.
+- `schemas/`: GSettings schema `org.gnome.shell.extensions.better-gestures`.
 - `lib/configManager.js`: wraps the settings.
 - `lib/gestureHandler.js`: touchpad gesture recognition (three-finger drag, four-finger remapping).
 - `lib/dragManager.js`: holds and releases the virtual pointer drag, including the drop delay.
@@ -19,13 +19,13 @@ Safari-style two-finger back/forward swipes in Files (Nautilus).
 ## Building and testing
 
 - `./build.sh` or `make install` packs the extension and installs it into
-  `~/.local/share/gnome-shell/extensions/gnome-3-finger-drag@extension.org/`.
+  `~/.local/share/gnome-shell/extensions/better-gestures@extension.org/`.
 - **GNOME Shell runs that installed copy, not this folder.** After editing,
   reinstall it (or copy the changed files there). On Wayland, also log out
   and back in, because GNOME Shell does not reload extension code otherwise.
 - There are no automated tests. Check changes by hand on a real touchpad.
   Logs: `journalctl -f -o cat /usr/bin/gnome-shell`. Messages are prefixed
-  with `3-finger-drag:`.
+  with `better-gestures:`.
 
 ## Conventions
 

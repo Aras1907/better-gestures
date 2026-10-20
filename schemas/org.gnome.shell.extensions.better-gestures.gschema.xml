@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <schema id="org.gnome.shell.extensions.3-finger-drag"
-          path="/org/gnome/shell/extensions/3-finger-drag/">
+  <schema id="org.gnome.shell.extensions.better-gestures"
+          path="/org/gnome/shell/extensions/better-gestures/">
+    <key name="three-finger-drag" type="b">
+      <default>true</default>
+      <summary>Three-finger drag</summary>
+      <description>Drag with three fingers on the touchpad. When off, three-finger gestures are left to GNOME Shell</description>
+    </key>
     <key name="drag-speed" type="d">
       <range min="0.25" max="4.0"/>
       <default>1.0</default>

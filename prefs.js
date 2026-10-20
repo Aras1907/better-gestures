@@ -3,7 +3,7 @@ import Gio from 'gi://Gio';
 import Gtk from 'gi://Gtk';
 import { ExtensionPreferences } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
-export default class ThreeFingerDragPrefs extends ExtensionPreferences {
+export default class BetterGesturesPrefs extends ExtensionPreferences {
     fillPreferencesWindow(window) {
         const settings = this.getSettings();
 
@@ -14,6 +14,13 @@ export default class ThreeFingerDragPrefs extends ExtensionPreferences {
             description: 'Drag with three fingers. Four-finger swipes switch workspaces and open the overview.'
         });
         page.add(group);
+
+        const dragRow = new Adw.SwitchRow({
+            title: 'Three-Finger Drag',
+            subtitle: 'When off, three-finger swipes are left to GNOME'
+        });
+        settings.bind('three-finger-drag', dragRow, 'active', Gio.SettingsBindFlags.DEFAULT);
+        group.add(dragRow);
 
         const speedRow = new Adw.SpinRow({
             title: 'Drag Speed',
@@ -26,6 +33,7 @@ export default class ThreeFingerDragPrefs extends ExtensionPreferences {
             digits: 2
         });
         settings.bind('drag-speed', speedRow, 'value', Gio.SettingsBindFlags.DEFAULT);
+        settings.bind('three-finger-drag', speedRow, 'sensitive', Gio.SettingsBindFlags.GET);
         group.add(speedRow);
 
         const delayRow = new Adw.SpinRow({
@@ -38,6 +46,7 @@ export default class ThreeFingerDragPrefs extends ExtensionPreferences {
             })
         });
         settings.bind('drop-delay', delayRow, 'value', Gio.SettingsBindFlags.DEFAULT);
+        settings.bind('three-finger-drag', delayRow, 'sensitive', Gio.SettingsBindFlags.GET);
         group.add(delayRow);
 
         const extrasGroup = new Adw.PreferencesGroup({

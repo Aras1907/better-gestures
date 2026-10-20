@@ -1,10 +1,10 @@
 {
-  "uuid": "gnome-3-finger-drag@extension.org",
-  "name": "macOS-style 3-Finger Drag & 4-Finger Gestures",
+  "uuid": "better-gestures@extension.org",
+  "name": "Better Gestures",
   "description": "macOS-style 3-finger drag that works everywhere, including window moves and drag-and-drop. GNOME gestures (workspace switching, overview) move to 4 fingers. Also adds Safari-style back and forward swipes in Files.",
   "shell-version": ["46", "47", "48", "49", "50"],
-  "url": "https://github.com/Aras1907/gnome-3-finger-drag",
-  "version": 2,
-  "version-name": "1.1.0",
-  "settings-schema": "org.gnome.shell.extensions.3-finger-drag"
+  "url": "https://github.com/Aras1907/better-gestures",
+  "version": 3,
+  "version-name": "1.2.0",
+  "settings-schema": "org.gnome.shell.extensions.better-gestures"
 }

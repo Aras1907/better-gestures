@@ -1,5 +1,5 @@
-project('gnome-3-finger-drag',
-  version: '1.1.0',
+project('better-gestures',
+  version: '1.2.0',
   license: 'MIT',
   meson_version: '>= 0.57.0',
   default_options: ['prefix=/usr'])
@@ -7,8 +7,8 @@ project('gnome-3-finger-drag',
 # A system-wide install, for distribution packages. The extension is plain
 # JavaScript, so nothing here depends on the CPU architecture.
 
-uuid = 'gnome-3-finger-drag@extension.org'
-schema = 'org.gnome.shell.extensions.3-finger-drag'
+uuid = 'better-gestures@extension.org'
+schema = 'org.gnome.shell.extensions.better-gestures'
 extension_dir = get_option('datadir') / 'gnome-shell' / 'extensions' / uuid
 
 install_data(['extension.js', 'prefs.js', 'metadata.json'],

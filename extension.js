@@ -10,14 +10,14 @@ let _dragManager = null;
 let _configManager = null;
 let _swipeBack = null;
 
-export default class MacOSDragExtension extends Extension {
+export default class BetterGesturesExtension extends Extension {
     enable() {
         const settings = this.getSettings();
         _configManager = new ConfigManagerModule.ConfigManager(settings);
         _dragManager = new DragManagerModule.DragManager(_configManager);
-        _gestureHandler = new GestureHandlerModule.GestureHandler(_dragManager);
+        _gestureHandler = new GestureHandlerModule.GestureHandler(_dragManager, _configManager);
         _swipeBack = new SwipeBackModule.SwipeBack(_configManager);
-        console.log('macOS-style 3-Finger Drag extension enabled');
+        console.log('Better Gestures extension enabled');
     }
 
     disable() {
@@ -37,6 +37,6 @@ export default class MacOSDragExtension extends Extension {
             _configManager.destroy();
             _configManager = null;
         }
-        console.log('macOS-style 3-Finger Drag extension disabled');
+        console.log('Better Gestures extension disabled');
     }
 }

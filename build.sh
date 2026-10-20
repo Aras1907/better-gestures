@@ -5,7 +5,7 @@
 # JavaScript, so it runs on any distribution and CPU architecture.
 set -e
 
-UUID=gnome-3-finger-drag@extension.org
+UUID=better-gestures@extension.org
 
 for tool in gnome-extensions gsettings; do
     if ! command -v "$tool" >/dev/null 2>&1; then

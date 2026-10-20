@@ -1,4 +1,4 @@
-UUID = gnome-3-finger-drag@extension.org
+UUID = better-gestures@extension.org
 EXTENSION_DIR = ~/.local/share/gnome-shell/extensions/$(UUID)
 
 zip:
@@ -10,7 +10,7 @@ install: zip
 	@echo "Installing extension..."
 	gnome-extensions install $(UUID).shell-extension.zip --force
 	@mkdir -p $(EXTENSION_DIR)/schemas
-	@cp schemas/org.gnome.shell.extensions.3-finger-drag.gschema.xml $(EXTENSION_DIR)/schemas/
+	@cp schemas/org.gnome.shell.extensions.better-gestures.gschema.xml $(EXTENSION_DIR)/schemas/
 	@glib-compile-schemas $(EXTENSION_DIR)/schemas/
 
 uninstall:
