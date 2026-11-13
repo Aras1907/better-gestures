@@ -12,7 +12,7 @@ GNOME's own three-finger gestures (workspace switching, overview) move to **four
 - **Drag speed:** a multiplier on pointer speed while dragging.
 - **On/off switch:** turn the three-finger drag off in the settings to leave three-finger swipes to GNOME.
 - **Swipe back and forward in Files (Nautilus):** swipe two fingers right to go back and left to go forward, with the folder view sliding like a page in Safari. This works with the pointer over the folder view; over the sidebar or header bar, two fingers scroll as usual. The sidebar and header bar stay put. The folder you are going to shows as soon as the swipe starts, if you have already visited it in that window.
-- **Touchscreen swipes in Files:** swipe one finger in from the left edge of the folder view to go back, or from the right edge to go forward. Touches elsewhere scroll, select and drag files as usual. Needs GNOME 49 or later.
+- **Touchscreen swipes in Files:** swipe one finger in from the left edge of the folder view to go back, or from the right edge to go forward. Touches elsewhere scroll, select and drag files as usual.
 - **Page turns for the buttons in Files:** going back or forward with the back and forward buttons, `Alt+←` and `Alt+→`, or a mouse's side buttons slides the folder the same way.
 
 ## Gestures
@@ -38,15 +38,15 @@ Open the extension's preferences (Extension Manager or the Extensions app):
 | Drag Speed | 0.25 – 4.0 | 1.0 | Pointer speed multiplier while dragging |
 | Drop Delay (ms) | 0 – 10000 | 5000 | How long to keep holding after fingers lift (0 drops at once) |
 | Swipe Back and Forward in Files | on/off | on | Two-finger back and forward swipes in Nautilus |
-| Touchscreen Swipe in Files | on/off | on | One-finger touchscreen back and forward swipes in Nautilus (GNOME 49+) |
+| Touchscreen Swipe in Files | on/off | on | One-finger touchscreen back and forward swipes in Nautilus |
 | Animate Back and Forward in Files | on/off | on | Slide the folder when going back or forward with the buttons, the keyboard or a mouse's side buttons |
 
 ## Requirements
 
-- GNOME Shell 46, 47, 48, 49 or 50, on any Linux distribution (Fedora, Ubuntu, Debian, Arch, openSUSE and others)
+- GNOME Shell 49, 50 or 51, on any Linux distribution (Fedora, Ubuntu, Debian, Arch, openSUSE and others)
 - Any CPU architecture (x86_64, ARM64 and others): the extension is plain JavaScript run by GNOME Shell, with nothing to compile
 - A touchpad with multi-touch support
-- For the swipes in Files: a Wayland session (the default on GNOME; GNOME 49 and later have no X11 session at all). Touchscreen swipes need GNOME 49 or later
+- For the swipes in Files: a Wayland session (the default on GNOME; GNOME 49 and later have no X11 session at all)
 
 ## Installation
 

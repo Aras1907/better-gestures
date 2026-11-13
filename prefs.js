@@ -63,7 +63,7 @@ export default class BetterGesturesPrefs extends ExtensionPreferences {
 
         const touchSwipeRow = new Adw.SwitchRow({
             title: 'Touchscreen Swipe in Files',
-            subtitle: 'On a touchscreen in Files, swipe one finger in from the left edge of the folder view to go back, or from the right edge to go forward. Needs GNOME 49 or later'
+            subtitle: 'On a touchscreen in Files, swipe one finger in from the left edge of the folder view to go back, or from the right edge to go forward'
         });
         settings.bind('nautilus-touch-swipe', touchSwipeRow, 'active', Gio.SettingsBindFlags.DEFAULT);
         extrasGroup.add(touchSwipeRow);

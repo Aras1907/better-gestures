@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Better Gestures, a GNOME Shell extension (GJS, ES modules) for GNOME Shell 46–50: macOS-style
+Better Gestures, a GNOME Shell extension (GJS, ES modules) for GNOME Shell 49–51: macOS-style
 three-finger drag, GNOME's own gestures moved to four fingers, and
 Safari-style two-finger back/forward swipes in Files (Nautilus).
 
@@ -12,7 +12,7 @@ Safari-style two-finger back/forward swipes in Files (Nautilus).
 - `lib/configManager.js`: wraps the settings.
 - `lib/gestureHandler.js`: touchpad gesture recognition (three-finger drag, four-finger remapping).
 - `lib/dragManager.js`: holds and releases the virtual pointer drag, including the drop delay.
-- `lib/swipeBack.js`: back/forward swipes in Files, from two-finger touchpad scrolls and one-finger touchscreen pans from the folder view's edges (`Clutter.PanGesture`, GNOME 49+ only). It snapshots the window, sends the mouse back/forward button (8/9) through a virtual pointer, and animates the snapshots over the window.
+- `lib/swipeBack.js`: back/forward swipes in Files, from two-finger touchpad scrolls and one-finger touchscreen pans from the folder view's edges (`Clutter.PanGesture`). It snapshots the window, sends the mouse back/forward button (8/9) through a virtual pointer, and animates the snapshots over the window.
 - `lib/folderHistory.js`: tracks each Files window's back/forward history from its title, with a snapshot per folder, so a swipe can show the destination folder before Files gets there.
 - `lib/folderArea.js`: finds the Files folder view's rectangle through the AT-SPI accessibility bus, so that only that area slides. It looks the area up again after the window is resized. `swipeBack.js` falls back to estimating it from Files' layout.
 
